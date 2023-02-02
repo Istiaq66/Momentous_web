@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root {
+
+    --bg-color: #faf7ef;
+    --primary-background-color: #fafafa;
+    --secondary-background-color: #653eb3;
+    --btn-background-color: #fb4381;
+    --primary-text-color: #000000;
+    --secondary-text-color: #3e3e3e;
+    --color-change: #ff3f44;
+    --muted-text-color: #5C5858;
+    --box-sahdow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.color-change {
+    color: var(--color-change);
+}
+
+.navbar .nav-item {
+    padding: 0 0 0 15px;
+    margin-right: -5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.navbar .nav-item .nav-link {
+    color: var(--secondary-text-color);
+}
+
+.navbar .nav-item .nav-link:hover {
+    color: var(--color-change);
+    transition: .5s ease all;
+
+}
+
+.navbar .nav-item .active {
+    color: var(--color-change);
+}
+
+button.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+
+    border: none;
+    color: var(--color-change);
+    border-radius: 0;
+    transition: box-shadow .15s ease-in-out;
+}
+
+.toggler-icon {
+    font-size: 25px;
+}
+
+.navbar-toggler.collapsed {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-image: ;
+
+    border: none;
+    color: var(--color-change);
+    border-radius: 0;
+    transition: box-shadow .15s ease-in-out;
+}
+
+
+/*banner secrion*/
+
+.carousel-control-prev,
+.carousel-control-next {
+    font-size: 40px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    color: var(--color-change);
+}
+
+.carousel-indicator {
+    background: none;
+}
+
+.carousel-indicators button {
+
+    border-radius: 40%;
+    height: 10px;
+    width: 10px;
+}
+
+.carousel-indicators .active {
+    background-color: var(--color-change);
+}
+
+.carousel-caption {
+    text-align: start;
+}
+
+.carousel-caption .content {
+    letter-spacing: 4px;
+    line-height: .2em;
+    margin-bottom: 20%;
+}
+
+.carousel-caption .content h1 {
+    font-size: 44px;
+}
+
+.carousel-caption .content h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.carousel-caption .content a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.carousel-caption .content .btn {
+    border: 3px solid var(--color-change);
+
+    padding: 5px 15px;
+
+}
+
+.carousel-caption .content .btn:hover {
+    background-color: var(--color-change);
+    transition: .5s;
+}
+
+/*banner secrion*/
+
+/*welcome section*/
+#welcome-text .content-box img {
+    height: 270px;
+    width: 100%;
+    margin: auto;
+}
+
+
+/*service section*/
+.heading-box h3 {
+    color: var(--primary-text-color);
+    font-size: 35px;
+}
+
+.heading-box img {
+    width: 200px;
+    height: auto;
+    position: relative;
+    bottom: 10px;
+}
+
+
+
+/*video section start*/
+#video-section {
+    background-image: url(../img/video_bg_img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+#video-section .content-box {
+
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+#video-section .content-box img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+#video-section .content-box h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+#video-section .content-box p {
+    font-size: 20px;
+}
+
+/*video section  end*/
+
+
+/*social media section Here*/
+#social-section {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    background-color: #1b1b1b;
+}
+
+#social-section .heading-box h3 {
+    color: #fff;
+}
+
+#social-section .content-box a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    font-size: 30px;
+    padding: 10px 15px;
+    margin: 30px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+#social-section .content-box a .fa-facebook-f {
+    padding: 10px 5px;
+}
+
+#social-section .content-box a:hover {
+    background-color: var(--color-change);
+    color: #fff;
+    transition: .5s ease all;
+}
+
+/*social media section Here*/
+
+
+
+/*review section*/
+
+.caousel-item .client-pic {
+    width: 180px;
+    height: auto;
+    padding-top: 30px;
+    padding: 20px;
+}
+
+.caousel-item .qoutation {
+    font-size: 50px;
+}
+
+.client-name:hover {
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+/*review section*/
+
+
+
+/*Footer section*/
+
+footer {
+    background-color: #1b1b1b;
+    padding-top: 100px;
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer a:hover {
+    color: var(--color-change);
+}
+
+footer .logo-img {
+    display: flex;
+
+    justify-content: center;
+
+}
+
+footer .logo-img img {
+    width: 150px;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: auto;
+}
+
+/*Footer section*/
+
+
+/*=============contat page start here=======*/
+
+.heading-banner {
+
+    padding: 100px 0;
+    margin-bottom: 100px;
+    width: auto;
+    background-image: url(../img/heading-banner-1.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.heading-banner a:hover {
+    color: #fff;
+}
+
+#contact-form {
+    margin-bottom: 50px;
+}
+
+#contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+#contact-form .form-group input {
+    background: none;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border: 2px solid #000;
+    border-radius: 0px;
+}
+
+#contact-form .form-group input:hover {
+    border-color: var(--color-change);
+    transition: .3s ease-in;
+}
+
+#contact-form .form-group input:focus {
+    background: none;
+    background-color: #fff;
+    border-color: var(--color-change);
+    outline: none;
+}
+
+#contact-form .form-group textarea::placeholder {
+    padding-top: 100px;
+    text-align: center;
+
+}
+
+#msgArea {
+    padding: 10px;
+    width: 100%;
+    background: none;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border: 2px solid #000;
+    border-radius: 0px;
+}
+
+#contact-form .form-group #msgArea:hover {
+    border-color: var(--color-change);
+    transition: .3s ease-in;
+}
+
+#contact-form .form-group #msgArea:focus {
+    background: none;
+    background-color: #fff;
+    border-color: var(--color-change);
+    outline: none;
+}
+
+/*
+#contact-form .form-group #msgArea."placeholder"{
+    padding: 10px;
+}
+*/
+
+#contact-form .sub-btn {
+    padding: 15px 40px;
+
+    background-color: var(--color-change);
+    color: #fff;
+}
+
+#contact-form .sub-btn:hover {
+    background-color: #000;
+    transition: .3s ease all;
+}
+
+
+
+/*=========about-us-area========*/
+
+#about-us-area {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+#about-page .heading-banner {
+    margin: 0;
+}
+
+.about-us-content p {
+    text-align: justify;
+}
+
+/*service type*/
+
+#service-type {
+    padding: 80px 0;
+}
+
+#service-type .content-box {
+
+    justify-content: center;
+    padding: 20px 50px;
+    background-color: #fff;
+    box-shadow: var(--box-sahdow);
+}
+
+#service-type .content-box p {
+    font-weight: 500;
+}
+
+#service-type .content-box .icon {
+    display: inline-block;
+    font-size: 40px;
+    color: var(--color-change);
+}
+
+/*=========about-us-area========*/
+
+
+
+
+/*GAllery Section Here*/
+#gallery-page{
+    background-color: #222;
+    padding: 100px 0;
+}
+.img-box{
+    margin: auto;
+}
+.thumbnail{
+    margin: 1px;
+/*   */
+    max-height:200px;
+    width:auto;
+}
+
+
+
+/*GAllery Section Here*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------boooking Form section ----------*/
+
+#booking-section .form-section {
+
+    max-width: 700px;
+    width: 100%;
+    padding: 30px;
+    margin: auto;
+}
+
+#booking-section form input {
+    background: none;
+    outline: none;
+    border: 1px solid #000;
+}
+
+#booking-section form input:hover {
+    border-color: var(--color-change);
+    transition: .5s ease all;
+}
+
+#booking-section form input:focus {
+    border-color: var(--color-change);
+}
+
+#booking-section form .form-group {
+    margin-bottom: 20px;
+}
+
+#booking-section form .form-group label {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+
+
+#booking-section form select {
+    background: none;
+    padding: 10px;
+}
+
+#booking-section form select:hover {
+    border-color: var(--color-change);
+    transition: .5s ease all;
+}
+
+#booking-section form select option {
+    background: none;
+}
+#booking-section form label a {
+  text-decoration: none;
+    color: var(--color-change);
+}
+#booking-section form label a:hover {
+  text-decoration: underline;
+   
+}
+#booking-section form .sub-btn {
+    background-color: #000;
+    color: #fff;
+    width: 100%
+}
+
+#booking-section form .sub-btn:hover {
+    background-color: var(--color-change);
+
+}
+
+/*---------boooking Form section ----------*/
+
+
+
+
+
+/*Cinematography area*/
+#video_area{
+    padding:50px 0;
+    background-color: #222;
+    
+}
+
+
+
+
+
+
+
+/*Cinematography area*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
