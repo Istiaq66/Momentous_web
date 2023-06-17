@@ -9,7 +9,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <html>
 
 <head>
-    <title>Pictures</title>
+    <title>Manage Team Members</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <script src="../JS/sweetalert.min.js"></script>
     <style>
         #addash {
-            margin-top: 80.5px;
+            margin-top: 185px;
         }
     </style>
 
@@ -64,79 +64,43 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manuel Orders</a>
                     <div class="dropdown-menu">
-                        <a href="../manual_order/add_order.php" class="dropdown-item">Add Orders</a>
+                        <a href="../manual_order/manual_order.php" class="dropdown-item">Add Orders</a>   
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Client Site</a>
                     <div class="dropdown-menu">
                         <a href="../clinet_site/pic_up.php" class="dropdown-item">Pictures</a>
-                        <a href="../clinet_site/add_review.php" class="dropdown-item">Review</a>
-                        <a href="../clinet_site/add_review.php" class="dropdown-item">Packages</a>
+                        <a href="../clinet_site/review.php" class="dropdown-item">Review</a>
+                        <a href="../clinet_site/package.php" class="dropdown-item">Packages</a>
                     </div>
                 </li>
-
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Team</a>
                     <div class="dropdown-menu">
-                        <a href="../clinet_site/add_team.php" class="dropdown-item">Add Team members</a>
-                        <a href="../clinet_site/manage_team.php" href="" class="dropdown-item">Manage Team members</a>
-                    </div>
+                        <a href="../team/add_team.php" class="dropdown-item">Add Team members</a>
+                        <a href="../team/manage_team.php" href="" class="dropdown-item">Manage Team members</a>     </div>
                 </li>
 
             </ul>
         </div>
     </nav>
 
-
-    <section id="booking-section" class="py-5">
-        <div class="container">
-            <h3 class="text-center mb-3">
-                Upload Pictures
-            </h3>
-            <div class="form-section">
-                <form action="add_pic.php" method="post" id="booking-form" enctype="multipart/form-data">
-
-                    <div class="form-group">
-                        <label for="selected-package"> Select Picture Category: <sup class="star text-danger">*</sup> </label>
-                        <select id="selected-package" name="cat" required>
-                            <option value="">Choose Category</option>
-                            <option value="banner">Select-Banner</option>
-                            <option value="gallery">Select-Gallery</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="Department"><b>Upload Picture<sup class="star text-danger">*</sup></b></label>
-                        <input class="form-control Border" type="file" id="file" name="file" required>
-                    </div>
-
-
-
-                    <div class="form-group col-md-5"></div>
-                    <div class="col-md-2 text-center mb-5">
-                        <button type="submit" value="Save" name="submit" class="btn btn-primary btn-lg btn-block login">Submit</button>
-                    </div>
-
-
-                </form>
-
-            </div>
-        </div>
-    </section>
-
-
+    
     <div class="container-fluid">
 
-        <h3 class="text-center text-dark my-5">Picture Management</h3>
+        <h3 class="text-center text-dark my-5">Cliens</h3>
         <div class="table-responsive">
             <table class="table table-hover table-bordered table-striped table-success">
-                <thead class="table-dark">
-                    <tr class="text-center ">
+                <thead class="text-dark">
+                    <tr class="text-center">
 
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Category</th>
+                        <th>Number</th>
+                        <th>Email</th>
+                        <th>Facebook Id Link</th>
                         <th>Delete</th>
 
                     </tr>
@@ -152,7 +116,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 $i = 1;
                 $num_per_page = 05;
                 $start_from = ($page - 1) * 05;
-                $query = "select * from pictures order by p_id desc limit $start_from,$num_per_page";
+                $query = "select * from team order by t_id desc limit $start_from,$num_per_page";
                 $query_run = mysqli_query($con, $query);
                 while ($row = mysqli_fetch_array($query_run)) {
                 ?>
@@ -160,10 +124,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
                     <tr class=" text-center">
                         <td><?php echo $i++ ?></td>
-                        <td><?php echo $row['p_name']; ?></td>
-                        <td><?php echo $row['p_cat']; ?></td>
+                        <td><?php echo $row['t_name']; ?></td>
+                        <td><?php echo $row['t_mobile']; ?></td>
+                        <td><?php echo $row['t_email']; ?></td>
+                        <td><a href="<?php echo $row['fb_id']; ?>"><?php echo $row['t_name']; ?></a></td>
                         <td>
-                            <a onclick="if (confirm('Delete client?')){return true;}else{event.stopPropagation(); event.preventDefault();};" class="btn btn-danger" href="del_pic.php? pn=<?php echo $row['p_id'] ?>">Delete</a>
+                            <a onclick="if (confirm('Delete client?')){return true;}else{event.stopPropagation(); event.preventDefault();};" class="btn btn-danger" href="del_team.php? an=<?php echo $row['t_id'] ?>">Delete</a>
                         </td>
 
 
@@ -198,12 +164,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         ?>
     </div>
 
+
+    
     <footer class="bg-light text-center text-lg-start" id="addash">
         <!-- Copyright -->
         <div class="text-center p-3 text-light bg-dark">
-            © 2022 Copyright:
-            <a class="text-light" href="https://www.istiaq66.me">Istiaq66.com</a>
-            <a href="../contact.php">Contact us</a>
+            © 2023 Copyright: Momentous Click
         </div>
         <!-- Copyright -->
     </footer>
@@ -226,3 +192,33 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['submit'])) {
+	include 'conn.php';
+	
+	$name = $_POST['tname'];
+    $number = $_POST['tnumber'];
+    $email = $_POST['temail'];
+    $fb = $_POST['fb_id'];
+
+	$query = "INSERT INTO team(t_name,t_mobile,fb_id,email) VALUES ('$name','$number','$email','$fb')";
+	$result = mysqli_query($con, $query);
+    
+    if ($result) {
+
+        echo '<script type="text/javascript">';
+        echo 'alert("Team Member added");';
+        echo 'window.location.href = "add_team.php";';
+        echo '</script>';
+    } else {
+        echo '<script type="text/javascript">';
+        echo 'alert("Failed...");';
+        echo 'window.location.href = "add_team.php";';
+        echo '</script>';
+    }
+
+
+
+
+}

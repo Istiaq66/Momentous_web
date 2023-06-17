@@ -101,7 +101,7 @@ $result = mysqli_query($con, $query);
                     ?>
                         <div class="col">
                             <div class="img-box">
-                                <img class="thumbnail" src="./Admin/upload/<?php echo $row['p_name']; ?>">
+                                <img class="thumbnail" src="./Admin/clinet_site/upload/<?php echo $row['p_name']; ?>">
                             </div>
                         </div>
                     <?php

@@ -80,7 +80,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Team</a>
                     <div class="dropdown-menu">
                         <a href="../team/add_team.php" class="dropdown-item">Add Team members</a>
-                        <a href="../clinet_site/manage_team.php" href="" class="dropdown-item">Manage Team members</a>
+                        <a href="../team/manage_team.php" href="" class="dropdown-item">Manage Team members</a>
                     </div>
                 </li>
 
@@ -117,16 +117,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div>
 
 
-
-
-
-
+    
     <footer class="bg-light text-center text-lg-start" id="addash">
         <!-- Copyright -->
         <div class="text-center p-3 text-light bg-dark">
-            © 2022 Copyright:
-            <a class="text-light" href="https://www.istiaq66.me">Istiaq66.com</a>
-            <a href="../contact.php">Contact us</a>
+            © 2023 Copyright: Momentous Click
         </div>
         <!-- Copyright -->
     </footer>
@@ -159,9 +154,14 @@ if (isset($_POST['submit'])) {
     $email = $_POST['temail'];
     $fb = $_POST['fb_id'];
 
-	$query = "INSERT INTO team(t_name,t_mobile,fb_id,email) VALUES ('$name','$number','$email','$fb')";
+	$query = "INSERT INTO team(t_name,t_mobile,fb_id,t_email) VALUES ('$name','$number','$fb','$email')";
 	$result = mysqli_query($con, $query);
     
+    if (!$result) {
+        echo "Error in DELETE query: " . mysqli_error($con);
+        exit;
+    }
+
     if ($result) {
 
         echo '<script type="text/javascript">';
